@@ -1,0 +1,6 @@
+● When implementing this application at scale I would like to use AWS IAM services to give access to certain account.
+● To implement logging and metrics I would use AWS Cloudtrail to monitor the traffic
+● I would store active data of users for 30 days in dynamo DB and I would shift the data into cold storage after that.
+● AWS Api gateway will take care of the rate limiting part and the scalability part with ELB making sure that requests are evenly distributed.
+● Since our chatservice is just a chatGPT call which a API call it would not be that heavy but we can also have a queue for the chatservice making sure that our system does not get overwhelmed at peak times.
+● To make sure our data is always available, I would implement AWS Dynamo DB storage which will always keep our data available.
