@@ -74,7 +74,7 @@ The project uses three separate files for Docker configuration:
 
 1. Navigate to the root folder of the ChatGPT clone project:
     ```sh
-    cd chatGPT-clone
+    cd Gauri-Kasar-Answerai-Fullstack
     ```
 2. Build the backend Docker image:
     ```sh
