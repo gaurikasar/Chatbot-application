@@ -45,8 +45,8 @@ const Login = () => {
             </div>
 
             <div>
-              <p>Welcome to ChatGPT</p>
-              <p>Log in with your OpenAI account to continue</p>
+              <p>Welcome to ChatGPT Clone application</p>
+              <p>Please login with your email id and password to get started</p>
             </div>
 
             <div className="btns">

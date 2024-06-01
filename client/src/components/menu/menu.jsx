@@ -38,6 +38,22 @@ const Menu = ({ changeColorMode }) => {
       }
     }
   }
+  const tokenUsage = async () => {
+    
+      let res = null
+      try {
+        res = await instance.get('/api/chat/tokenUsage')
+      } catch (err) {
+        alert(err)
+      } finally {
+        if (res?.data?.status === 200) {
+          alert("Token size is:"+ res.data.data);
+          
+        }
+      }
+    
+  }
+
 
   const clearHistory = async (del) => {
     if (del) {
@@ -199,16 +215,14 @@ const Menu = ({ changeColorMode }) => {
               </>
             )
           }
-          <button><Avatar />Upgrade to Plus <span>New</span></button>
+          <button onClick={tokenUsage} ><Avatar />Token Usage </button>
           <button onClick={() => {
             if (settingRef?.current) {
               settingRef.current.classList.add("clicked")
               settingRef.current.style.display = 'flex'
             }
           }} ><Settings />Settings</button>
-          <button onClick={() => {
-            window.open('https://help.openai.com/en/collections/3742473-chatgpt', '_blank')
-          }}><Tab />Get help</button>
+          
           <button onClick={logOut} >
             <LogOut />Log out
           </button>

@@ -112,7 +112,7 @@ const SignupComponent = () => {
             <div>
               <h1>Create your account</h1>
 
-              <p>Please note that phone verification is required for signup. Your number will only be used to verify your identity for security purposes.</p>
+              <p>Please use the email which is active to signin. We would be sending a verification link</p>
 
             </div>
 
@@ -139,22 +139,7 @@ const SignupComponent = () => {
                     </div>
                   </form>
 
-                  <div data-for="acc-sign-up-login">
-                    <span>Already have an account?</span>
-                    <Link to={'/login/auth'}>Log in</Link>
-                  </div>
-
-                  <div className="extra">
-                    <div className="divide">
-                      <span>OR</span>
-                    </div>
-
-                    <div className="btns" id='options'>
-                      <button onClick={googleAuth}><Google /> Continue with Google</button>
-                      <button><Microsoft /> Continue with Microsoft Account</button>
-                    </div>
-
-                  </div>
+  
                 </div>
               ) : (
                 <form className='Form' onSubmit={formHandle}>

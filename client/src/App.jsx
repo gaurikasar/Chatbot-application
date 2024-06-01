@@ -11,27 +11,16 @@ const App = () => {
 
   const { loading, user } = useSelector((state) => state);
 
-  const changeColorMode = (to) => {
-    if (to) {
-      localStorage.setItem("darkMode", true);
 
-      document.body.className = "dark";
-    } else {
-      localStorage.removeItem("darkMode");
-
-      document.body.className = "light";
-    }
-  };
 
   // Dark & Light Mode
   useLayoutEffect(() => {
+    localStorage.setItem("darkMode", true);
+    document.body.className = "dark";
     let mode = localStorage.getItem("darkMode");
-
-    if (mode) {
-      changeColorMode(true);
-    } else {
-      changeColorMode(false);
-    }
+ //  localStorage.removeItem("darkMode");
+     // document.body.className = "light";
+    
   });
 
   // Offline
@@ -49,7 +38,7 @@ const App = () => {
     <section className={user ? "main-grid" : null}>
       {user && (
         <div>
-          <Menu changeColorMode={changeColorMode} />
+          <Menu />
         </div>
       )}
 

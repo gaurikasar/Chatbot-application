@@ -49,7 +49,7 @@ router.get('/checkLogged', CheckLogged, (req, res) => {
         message: 'Not Logged'
     })
 })
-
+//user signs up, it adds entry to the temp table until user verfies email
 router.post('/signup', CheckLogged, async (req, res) => {
     const Continue = async () => {
         let response = null
@@ -154,7 +154,7 @@ router.post('/signup', CheckLogged, async (req, res) => {
         })
     }
 })
-
+//checks if verification of email is pending
 router.get('/checkPending', CheckLogged, async (req, res) => {
     const { _id } = req.query
     let response = null
@@ -194,7 +194,7 @@ router.get('/checkPending', CheckLogged, async (req, res) => {
         })
     }
 })
-
+//once user clicks on the verify link this gets triggered and it adds user entry into user table.
 router.put('/signup-finish', CheckLogged, async (req, res) => {
     let response = null
     try {
@@ -221,7 +221,7 @@ router.put('/signup-finish', CheckLogged, async (req, res) => {
         }
     }
 })
-
+//when user logs in
 router.get('/login', CheckLogged, async (req, res) => {
     const Continue = async () => {
         let response = null
@@ -289,7 +289,7 @@ router.get('/login', CheckLogged, async (req, res) => {
     }
 
 })
-
+// this route helps user in recovering password by sending an email to his account with a link to enter a new password
 router.post('/forgot-request', CheckLogged, async (req, res) => {
     if (req.body?.email) {
         let secret = Math.random().toString(16)
@@ -343,7 +343,7 @@ router.post('/forgot-request', CheckLogged, async (req, res) => {
         })
     }
 })
-
+// when if the link is correct
 router.get('/forgot-check', CheckLogged, async (req, res) => {
     if (req.query?.userId && req.query?.secret) {
         let response = null
@@ -376,7 +376,7 @@ router.get('/forgot-check', CheckLogged, async (req, res) => {
         })
     }
 })
-
+//once entered, it adds new password to the permanent user table
 router.put('/forgot-finish', CheckLogged, async (req, res) => {
     if (req.body?.userId && req.body?.secret) {
 

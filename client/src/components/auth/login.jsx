@@ -78,7 +78,7 @@ const LoginComponent = () => {
             </div>
 
             <div>
-                {!state.filled ? <h1>Welcome back</h1>
+                {!state.filled ? <h1>Hi There!!</h1>
                     : <h1>Enter your password</h1>}
 
             </div>
@@ -110,17 +110,7 @@ const LoginComponent = () => {
                             <Link to={'/signup'}>Sign up</Link>
                         </div>
 
-                        <div className="extra">
-                            <div className="divide">
-                                <span>OR</span>
-                            </div>
-
-                            <div className="btns">
-                                <button onClick={googleAuth} ><Google /> Continue with Google</button>
-                                <button><Microsoft /> Continue with Microsoft Account</button>
-                            </div>
-
-                        </div>
+                     
                     </div>
                 ) : (
                     <form className='Form' onSubmit={formHandle}>
