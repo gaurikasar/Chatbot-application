@@ -45,7 +45,7 @@ The project uses three separate files for Docker configuration:
 #### Client
 1. In `package.json`, change:
     ```json
-    "dev": "vite --host"
+    "dev": "vite"
     ```
     to:
     ```json
